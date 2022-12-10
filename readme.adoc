@@ -1,0 +1,26 @@
+= K-Libs Multi-Platform Library Repo Template
+:source-highlighter: highlightjs
+:gh-group: k-libs
+:gh-name: k-some-lib
+:lib-package: io.klibs
+:lib-group: io.k-libs
+:lib-name: some-lib
+:lib-version: 0.1.0
+:lib-feature: 0.1.0
+
+////
+image:https://img.shields.io/github/license/{gh-group}/{gh-name}[title="License"]
+image:https://img.shields.io/badge/docs-dokka-ff69b4[link="https://{gh-group}.github.io/{gh-name}/dokka/{lib-feature}/{lib-name}/{lib-package}/index.html"]
+image:https://img.shields.io/maven-central/v/{lib-group}/{lib-name}[link="https://search.maven.org/artifact/{lib-group}/{lib-name}"]
+////
+
+A template repository with the boilerplate taken care of.
+
+////
+== Import
+
+[source, kotlin, subs="attributes"]
+----
+  implementation("{lib-group}:{lib-name}:{lib-version}")
+----
+////
