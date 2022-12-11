@@ -27,39 +27,42 @@ Pure Kotlin deque implementations.
 .Kotlin
 [source, kotlin]
 ----
-import io.klibs.collections.*
+// Make a deque the hard way!
+val deque = Deque<Int>(
+  initialCapacity = 5,
+  scaleFactor = 2f,
+  maxSize = 32
+)
 
-fun main() {
-  // Make a deque from varargs!
-  val deque = dequeOf(1, 2, 3, 4, 5)
+// Make a deque the easy way!
+val deque = dequeOf(1, 2, 3, 4, 5)
 
-  // Pop elements off the front!
-  require(deque.popFirst() == 1)
+// Pop elements off the front!
+require(deque.popFirst() == 1)
 
-  // Pop elements off the back!
-  require(deque.popLast() == 5)
+// Pop elements off the back!
+require(deque.popLast() == 5)
 
-  // Peek at elements!
-  require(deque.peekFirst() == 2)
-  require(deque.peekLast() == 4)
+// Peek at elements!
+require(deque.peekFirst() == 2)
+require(deque.peekLast() == 4)
 
-  // Push elements onto the deque
-  deque.pushFirst(-1)
-  deque.pushLast(-5)
+// Push elements onto the deque
+deque.pushFirst(-1)
+deque.pushLast(-5)
 
-  // Iterate non-destructively!
-  for (value in deque)
-    println(value)
+// Iterate non-destructively!
+for (value in deque)
+println(value)
 
-  // Again!!
-  deque.peekEach { println(it) }
+// Again!!
+deque.peekEach { println(it) }
 
-  // In reverse!
-  deque.peekEach(true) { println(it) }
+// In reverse!
+deque.peekEach(true) { println(it) }
 
-  // Iterate destructively!
-  deque.popEach { println(it) }
-}
+// Iterate destructively!
+deque.popEach { println(it) }
 ----
 
 == Version History
