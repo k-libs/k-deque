@@ -53,7 +53,7 @@ deque.pushLast(-5)
 
 // Iterate non-destructively!
 for (value in deque)
-println(value)
+  println(value)
 
 // Again!!
 deque.peekEach { println(it) }
