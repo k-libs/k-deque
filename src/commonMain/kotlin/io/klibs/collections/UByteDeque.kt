@@ -1539,6 +1539,27 @@ open class UByteDeque(
     }
   }
 
+  /**
+   * Returns the contents of this deque as an array.
+   *
+   * @return An array of size [size] containing the contents of this deque.
+   */
+  fun toArray(): UByteArray {
+    if (size == 0)
+      return UByteArray(0)
+
+    val realTail = internalIndex(lastIndex)
+
+    if (realHead < realTail)
+      return buffer.copyOfRange(realHead, realTail + 1)
+
+    val out = UByteArray(size)
+    buffer.copyInto(out, 0, realHead, buffer.size)
+    buffer.copyInto(out, buffer.size - realHead, 0, realTail + 1)
+
+    return out
+  }
+
   override fun toString() = "Deque(size=$size, capacity=$capacity)"
 
   override fun equals(other: Any?) = if (other is UByteDeque) buffer.contentEquals(buffer) else false
