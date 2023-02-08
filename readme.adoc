@@ -5,8 +5,8 @@
 :lib-package: io.klibs.collections
 :lib-group: io.k-libs
 :lib-name: deque
-:lib-version: 0.3.0
-:lib-feature: 0.3.0
+:lib-version: 0.4.0
+:lib-feature: 0.4.0
 
 
 image:https://img.shields.io/github/license/{gh-group}/{gh-name}[title="License"]
@@ -70,6 +70,7 @@ deque.popEach { println(it) }
 [%header, cols="1m,11"]
 |===
 | Version | Description
+| v0.4.0  | *BREAKING!* See version release notes!
 | v0.3.0  | Add `toArray()` method to deques.
 | v0.2.0  | Add UByteDeque
 | v0.1.0  | Initial release containing a generic Deque type.

@@ -1544,7 +1544,7 @@ open class UByteDeque(
    *
    * @return An array of size [size] containing the contents of this deque.
    */
-  fun toArray(): UByteArray {
+  fun copyToArray(): UByteArray {
     if (size == 0)
       return UByteArray(0)
 
