@@ -92,7 +92,7 @@ publishing {
       artifact(javadocJar)
 
       pom {
-        name.set("K-Sample")
+        name.set("K-Deque")
         description.set(project.description)
         url.set("https://github.com/k-libs/k-deque")
 
