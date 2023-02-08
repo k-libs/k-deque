@@ -46,4 +46,20 @@ class UByteDequeTest {
     assertEquals(1u, arr[2])
   }
 
+  @Test
+  fun internalIndex_t1() {
+    val tgt = UByteDeque(4)
+    tgt.pushFirst(1u)
+    tgt.pushFirst(8u)
+    tgt.pushFirst(8u)
+    tgt.pushFirst(4u)
+    tgt.pushFirst(8u)
+    tgt.pushFirst(4u)
+    tgt.pushFirst(7u)
+    tgt.pushFirst(4u)
+    tgt.pushFirst(1u)
+    tgt.pushFirst(2u)
+
+    println(tgt[8])
+  }
 }

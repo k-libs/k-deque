@@ -1588,6 +1588,8 @@ open class Deque<T>(
         buffer = arrayOfNulls(0)
 
       return
+    } else if (size == buffer.size) {
+      return
     }
 
     val new  = arrayOfNulls<Any>(size)
@@ -1601,6 +1603,7 @@ open class Deque<T>(
     }
 
     buffer = new
+    realHead = 0
   }
 
   fun contentEquals(other: Deque<T>): Boolean {

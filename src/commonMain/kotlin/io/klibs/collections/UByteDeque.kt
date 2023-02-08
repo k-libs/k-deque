@@ -1567,7 +1567,13 @@ open class UByteDeque(
   }
 
   fun trimToSize() {
+    if (buffer.size == 0)
+      return
+    if (size == buffer.size)
+      return
+
     buffer = copyToArray()
+    realHead = 0
   }
 
   fun contentEquals(other: UByteDeque): Boolean {
