@@ -1560,6 +1560,10 @@ open class UByteDeque(
     return out
   }
 
+  fun trimToSize() {
+    buffer = copyToArray()
+  }
+
   override fun toString() = "Deque(size=$size, capacity=$capacity)"
 
   override fun equals(other: Any?) = if (other is UByteDeque) buffer.contentEquals(buffer) else false

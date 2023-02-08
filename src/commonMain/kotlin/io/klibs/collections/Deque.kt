@@ -1576,6 +1576,27 @@ open class Deque<T>(
    */
   fun copyToArray(provider: (size: Int, init: (i: Int) -> Unit) -> Array<T>) = provider(size, ::get)
 
+  fun trimToSize() {
+    if (size == 0) {
+      if (buffer.isNotEmpty())
+        buffer = arrayOfNulls(0)
+
+      return
+    }
+
+    val new  = arrayOfNulls<Any>(size)
+    val tail = internalIndex(lastIndex)
+
+    if (realHead < tail) {
+      buffer.copyInto(new, 0, realHead, tail + 1)
+    } else {
+      buffer.copyInto(new, 0, realHead, buffer.size)
+      buffer.copyInto(new, buffer.size - realHead, 0, tail + 1)
+    }
+
+    buffer = new
+  }
+
   override fun toString() = "Deque(size=$size, capacity=$capacity)"
 
   override fun equals(other: Any?) = if (other is Deque<*>) buffer.contentEquals(buffer) else false
