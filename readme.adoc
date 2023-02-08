@@ -67,11 +67,23 @@ deque.popEach { println(it) }
 
 == Version History
 
-[%header, cols="1m,11"]
+[%header, cols="1m,1m,10"]
 |===
-| Version | Description
-| v0.4.0  | *BREAKING!* See https://github.com/k-libs/k-deque/releases/tag/v0.4.0[version release notes]!
-| v0.3.0  | Add `toArray()` method to deques.
-| v0.2.0  | Add UByteDeque
-| v0.1.0  | Initial release containing a generic Deque type.
+| Version | Docs | Description
+
+| v0.4.0
+| https://{gh-group}.github.io/{gh-name}/dokka/0.4.0/{lib-name}/{lib-package}/index.html[Dokka]
+| *BREAKING!* See https://github.com/k-libs/k-deque/releases/tag/v0.4.0[version release notes]!
+
+| v0.3.0
+| https://{gh-group}.github.io/{gh-name}/dokka/0.3.0/{lib-name}/{lib-package}/index.html[Dokka]
+| Add `toArray()` method to deques.
+
+| v0.2.0
+| https://{gh-group}.github.io/{gh-name}/dokka/0.2.0/{lib-name}/{lib-package}/index.html[Dokka]
+| Add UByteDeque
+
+| v0.1.0
+| https://{gh-group}.github.io/{gh-name}/dokka/0.1.0/{lib-name}/{lib-package}/index.html[Dokka]
+| Initial release containing a generic Deque type.
 |===
