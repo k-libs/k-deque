@@ -1564,6 +1564,19 @@ open class UByteDeque(
     buffer = copyToArray()
   }
 
+  fun contentEquals(other: UByteDeque): Boolean {
+    if (size != other.size)
+      return false
+    if (size == 0)
+      return true
+
+    for (i in 0 .. lastIndex)
+      if (get(i) != other[i])
+        return false
+
+    return true
+  }
+
   override fun toString() = "Deque(size=$size, capacity=$capacity)"
 
   override fun equals(other: Any?) = if (other is UByteDeque) buffer.contentEquals(buffer) else false

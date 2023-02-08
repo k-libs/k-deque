@@ -1597,6 +1597,19 @@ open class Deque<T>(
     buffer = new
   }
 
+  fun contentEquals(other: Deque<T>): Boolean {
+    if (size != other.size)
+      return false
+    if (size == 0)
+      return true
+
+    for (i in 0 .. lastIndex)
+      if (this[i] != other[i])
+        return false
+
+    return true
+  }
+
   override fun toString() = "Deque(size=$size, capacity=$capacity)"
 
   override fun equals(other: Any?) = if (other is Deque<*>) buffer.contentEquals(buffer) else false
