@@ -651,6 +651,7 @@ open class Deque<T>(
    *
    * @param value Value to push onto the front of this deque.
    */
+  @Suppress("NOTHING_TO_INLINE")
   inline fun prepend(value: T) = pushFirst(value)
 
   /**
@@ -681,6 +682,7 @@ open class Deque<T>(
    *
    * @param value Value to push onto the back of this deque.
    */
+  @Suppress("NOTHING_TO_INLINE")
   inline fun append(value: T) = pushLast(value)
 
   /**
@@ -1266,6 +1268,7 @@ open class Deque<T>(
     buffer[toValidInternalIndex(index)] = value
   }
 
+  @Suppress("NOTHING_TO_INLINE")
   inline operator fun plusAssign(value: T) = pushLast(value)
 
   /**
@@ -1273,6 +1276,7 @@ open class Deque<T>(
    *
    * @return `true` if this deque contains zero items, otherwise `false`.
    */
+  @Suppress("NOTHING_TO_INLINE")
   inline fun isEmpty() = size == 0
 
   /**
@@ -1280,6 +1284,7 @@ open class Deque<T>(
    *
    * @return `true` if this deque contains one or more items, otherwise `false`.
    */
+  @Suppress("NOTHING_TO_INLINE")
   inline fun isNotEmpty() = size != 0
 
   /**
@@ -1292,6 +1297,7 @@ open class Deque<T>(
    *
    * @return `true` if this deque is currently at capacity, otherwise `false`.
    */
+  @Suppress("NOTHING_TO_INLINE")
   inline fun atCapacity() = size == capacity
 
   /**
@@ -1574,7 +1580,7 @@ open class Deque<T>(
    *
    * @return An array of size [size] containing the contents of this deque.
    */
-  fun copyToArray(provider: (size: Int, init: (i: Int) -> Unit) -> Array<T>) = provider(size, ::get)
+  fun copyToArray(provider: (size: Int, init: (i: Int) -> T) -> Array<T>) = provider(size, ::get)
 
   fun trimToSize() {
     if (size == 0) {
@@ -1587,7 +1593,7 @@ open class Deque<T>(
     val new  = arrayOfNulls<Any>(size)
     val tail = internalIndex(lastIndex)
 
-    if (realHead < tail) {
+    if (realHead <= tail) {
       buffer.copyInto(new, 0, realHead, tail + 1)
     } else {
       buffer.copyInto(new, 0, realHead, buffer.size)
@@ -1630,16 +1636,26 @@ open class Deque<T>(
    * @throws IndexOutOfBoundsException If the given external index is less than
    * `0` or greater than `lastIndex`.
    */
+  @Suppress("NOTHING_TO_INLINE")
   protected inline fun toValidInternalIndex(i: Int) =
     if (i in 0 .. lastIndex)
       internalIndex(i)
     else
       throw IndexOutOfBoundsException("Attempted to access item [$i] in a deque with a size of [$size]")
 
+  @Suppress("NOTHING_TO_INLINE")
   protected inline fun positiveMod(i: Int) = if (i >= buffer.size) i - buffer.size else i
+
+  @Suppress("NOTHING_TO_INLINE")
   protected inline fun negativeMod(i: Int) = if (i < 0) i + buffer.size else i
+
+  @Suppress("NOTHING_TO_INLINE")
   protected inline fun internalIndex(i: Int) = positiveMod(realHead + i)
+
+  @Suppress("NOTHING_TO_INLINE")
   protected inline fun incremented(i: Int) = if (i == buffer.size - 1) 0 else i + 1
+
+  @Suppress("NOTHING_TO_INLINE")
   protected inline fun decremented(i: Int) = if (i == 0) buffer.size - 1 else i - 1
 
   /**
@@ -1687,6 +1703,7 @@ open class Deque<T>(
    *
    * @return The new capacity value for the deque
    */
+  @Suppress("NOTHING_TO_INLINE")
   protected inline fun newCapacity(minCapacity: Int) = max(min((buffer.size * scaleFactor).toInt(), maxSize), minCapacity)
 
   /**
@@ -1700,6 +1717,7 @@ open class Deque<T>(
    *
    * @return The lesser value of [a] and [b].
    */
+  @Suppress("NOTHING_TO_INLINE")
   protected inline fun min(a: Int, b: Int) = if (a < b) a else b
 
   /**
@@ -1713,6 +1731,7 @@ open class Deque<T>(
    *
    * @return The greater value of [a] and [b].
    */
+  @Suppress("NOTHING_TO_INLINE")
   protected inline fun max(a: Int, b: Int) = if (a < b) b else a
 
   inner class Iterator {

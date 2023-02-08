@@ -32,3 +32,11 @@ fun <T> dequeOf(vararg values: T): Deque<T> {
 
   return out
 }
+
+@OptIn(ExperimentalUnsignedTypes::class)
+fun ubyteDequeOf(vararg values: UByte): UByteDeque {
+  val out = UByteDeque(values.size)
+  for (v in values)
+    out += v
+  return out
+}

@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "io.k-libs"
-version = "0.6.0"
+version = "0.6.1"
 description = "Pure Kotlin deque implementations."
 
 repositories {

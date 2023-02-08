@@ -632,6 +632,7 @@ open class UByteDeque(
    *
    * @param value Value to push onto the front of this deque.
    */
+  @Suppress("NOTHING_TO_INLINE")
   inline fun prepend(value: UByte) = pushFirst(value)
 
   /**
@@ -662,6 +663,7 @@ open class UByteDeque(
    *
    * @param value Value to push onto the back of this deque.
    */
+  @Suppress("NOTHING_TO_INLINE")
   inline fun append(value: UByte) = pushLast(value)
 
   /**
@@ -1239,6 +1241,7 @@ open class UByteDeque(
     buffer[toValidInternalIndex(index)] = value
   }
 
+  @Suppress("NOTHING_TO_INLINE")
   inline operator fun plusAssign(value: UByte) = pushLast(value)
 
   /**
@@ -1246,6 +1249,7 @@ open class UByteDeque(
    *
    * @return `true` if this deque contains zero items, otherwise `false`.
    */
+  @Suppress("NOTHING_TO_INLINE")
   inline fun isEmpty() = size == 0
 
   /**
@@ -1253,6 +1257,7 @@ open class UByteDeque(
    *
    * @return `true` if this deque contains one or more items, otherwise `false`.
    */
+  @Suppress("NOTHING_TO_INLINE")
   inline fun isNotEmpty() = size != 0
 
   /**
@@ -1265,6 +1270,7 @@ open class UByteDeque(
    *
    * @return `true` if this deque is currently at capacity, otherwise `false`.
    */
+  @Suppress("NOTHING_TO_INLINE")
   inline fun atCapacity() = size == capacity
 
   /**
@@ -1550,7 +1556,7 @@ open class UByteDeque(
 
     val realTail = internalIndex(lastIndex)
 
-    if (realHead < realTail)
+    if (realHead <= realTail)
       return buffer.copyOfRange(realHead, realTail + 1)
 
     val out = UByteArray(size)
@@ -1597,16 +1603,26 @@ open class UByteDeque(
    * @throws IndexOutOfBoundsException If the given external index is less than
    * `0` or greater than `lastIndex`.
    */
+  @Suppress("NOTHING_TO_INLINE")
   protected inline fun toValidInternalIndex(i: Int) =
     if (i in 0 .. lastIndex)
       internalIndex(i)
     else
       throw IndexOutOfBoundsException("Attempted to access item [$i] in a deque with a size of [$size]")
 
+  @Suppress("NOTHING_TO_INLINE")
   protected inline fun positiveMod(i: Int) = if (i >= buffer.size) i - buffer.size else i
+
+  @Suppress("NOTHING_TO_INLINE")
   protected inline fun negativeMod(i: Int) = if (i < 0) i + buffer.size else i
+
+  @Suppress("NOTHING_TO_INLINE")
   protected inline fun internalIndex(i: Int) = positiveMod(realHead + i)
+
+  @Suppress("NOTHING_TO_INLINE")
   protected inline fun incremented(i: Int) = if (i == buffer.size - 1) 0 else i + 1
+
+  @Suppress("NOTHING_TO_INLINE")
   protected inline fun decremented(i: Int) = if (i == 0) buffer.size - 1 else i - 1
 
   /**
@@ -1654,6 +1670,7 @@ open class UByteDeque(
    *
    * @return The new capacity value for the deque
    */
+  @Suppress("NOTHING_TO_INLINE")
   protected inline fun newCapacity(minCapacity: Int) = max(min((buffer.size * scaleFactor).toInt(), maxSize), minCapacity)
 
   /**
@@ -1667,12 +1684,13 @@ open class UByteDeque(
    *
    * @return The lesser value of [a] and [b].
    */
+  @Suppress("NOTHING_TO_INLINE")
   protected inline fun min(a: Int, b: Int) = if (a < b) a else b
 
   /**
    * Max Value
    *
-   * Returns the greater of the two input values.
+   * Returns the greater of the two input values.f
    *
    * @param a Value 1
    *
@@ -1680,6 +1698,7 @@ open class UByteDeque(
    *
    * @return The greater value of [a] and [b].
    */
+  @Suppress("NOTHING_TO_INLINE")
   protected inline fun max(a: Int, b: Int) = if (a < b) b else a
 
   inner class Iterator {
