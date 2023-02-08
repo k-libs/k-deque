@@ -31,4 +31,19 @@ class UByteDequeTest {
     assertEquals(2u, arr[1])
   }
 
+  @OptIn(ExperimentalUnsignedTypes::class)
+  @Test
+  fun copyToArray_t4() {
+    val tgt = UByteDeque(3)
+    tgt.pushFirst(1u)
+    tgt.pushFirst(2u)
+    tgt.pushFirst(3u)
+
+    val arr = tgt.copyToArray()
+    assertEquals(3, arr.size)
+    assertEquals(3u, arr[0])
+    assertEquals(2u, arr[1])
+    assertEquals(1u, arr[2])
+  }
+
 }

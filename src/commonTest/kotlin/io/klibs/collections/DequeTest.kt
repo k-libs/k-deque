@@ -28,4 +28,18 @@ class DequeTest {
     assertEquals("world", arr[1])
   }
 
+  @Test
+  fun copyToArray_t4() {
+    val tgt = Deque<String>(3)
+    tgt.pushFirst("henlo")
+    tgt.pushFirst("little")
+    tgt.pushFirst("poppet")
+
+    val arr = tgt.copyToArray(::Array)
+    assertEquals(3, arr.size)
+    assertEquals("poppet", arr[0])
+    assertEquals("little", arr[1])
+    assertEquals("henlo", arr[2])
+  }
+
 }
