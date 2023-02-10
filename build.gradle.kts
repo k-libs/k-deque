@@ -1,12 +1,12 @@
 plugins {
-  kotlin("multiplatform") version "1.7.21"
+  kotlin("multiplatform") version "1.8.0"
   id("org.jetbrains.dokka") version "1.7.20"
   `maven-publish`
   signing
 }
 
 group = "io.k-libs"
-version = "0.7.0"
+version = "0.8.0"
 description = "Pure Kotlin deque implementations."
 
 repositories {

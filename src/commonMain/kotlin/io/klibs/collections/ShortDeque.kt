@@ -1,5 +1,8 @@
 package io.klibs.collections
 
+import kotlin.js.ExperimentalJsExport
+import kotlin.js.JsExport
+
 /**
  * # Signed Short Deque
  *
@@ -34,6 +37,8 @@ package io.klibs.collections
  *
  * **Default**: `2,147,483,647` (Int.MAX_VALUE)
  */
+@JsExport
+@OptIn(ExperimentalJsExport::class)
 open class ShortDeque(
   initialCapacity: Int = 16,
   val scaleFactor: Float = 1.5F,
