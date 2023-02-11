@@ -1593,6 +1593,14 @@ open class IntDeque(
     return true
   }
 
+  fun copyOf(): IntDeque {
+    val out = IntDeque(0, scaleFactor, maxSize)
+    out.buffer = buffer.copyOf()
+    out.size = size
+    out.realHead = realHead
+    return out
+  }
+
   override fun toString() = "Deque(size=$size, capacity=$capacity)"
 
   override fun equals(other: Any?) = if (other is IntDeque) buffer.contentEquals(buffer) else false

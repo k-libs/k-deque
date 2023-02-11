@@ -1589,6 +1589,14 @@ open class UShortDeque(
     return true
   }
 
+  fun copyOf(): UShortDeque {
+    val out = UShortDeque(0, scaleFactor, maxSize)
+    out.buffer = buffer.copyOf()
+    out.size = size
+    out.realHead = realHead
+    return out
+  }
+
   override fun toString() = "Deque(size=$size, capacity=$capacity)"
 
   override fun equals(other: Any?) = if (other is UShortDeque) buffer.contentEquals(buffer) else false

@@ -1593,6 +1593,14 @@ open class LongDeque(
     return true
   }
 
+  fun copyOf(): LongDeque {
+    val out = LongDeque(0, scaleFactor, maxSize)
+    out.buffer = buffer.copyOf()
+    out.size = size
+    out.realHead = realHead
+    return out
+  }
+
   override fun toString() = "Deque(size=$size, capacity=$capacity)"
 
   override fun equals(other: Any?) = if (other is LongDeque) buffer.contentEquals(buffer) else false

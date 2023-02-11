@@ -1619,6 +1619,14 @@ open class Deque<T>(
     return true
   }
 
+  fun copyOf(): Deque<T> {
+    val out = Deque<T>(0, scaleFactor, maxSize)
+    out.buffer = buffer.copyOf()
+    out.size = size
+    out.realHead = realHead
+    return out
+  }
+
   override fun toString() = "Deque(size=$size, capacity=$capacity)"
 
   override fun equals(other: Any?) = if (other is Deque<*>) buffer.contentEquals(buffer) else false

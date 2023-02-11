@@ -1593,6 +1593,14 @@ open class CharDeque(
     return true
   }
 
+  fun copyOf(): CharDeque {
+    val out = CharDeque(0, scaleFactor, maxSize)
+    out.buffer = buffer.copyOf()
+    out.size = size
+    out.realHead = realHead
+    return out
+  }
+
   override fun toString() = "Deque(size=$size, capacity=$capacity)"
 
   override fun equals(other: Any?) = if (other is CharDeque) buffer.contentEquals(buffer) else false

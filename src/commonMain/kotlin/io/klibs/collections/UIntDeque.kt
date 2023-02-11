@@ -1589,6 +1589,14 @@ open class UIntDeque(
     return true
   }
 
+  fun copyOf(): UIntDeque {
+    val out = UIntDeque(0, scaleFactor, maxSize)
+    out.buffer = buffer.copyOf()
+    out.size = size
+    out.realHead = realHead
+    return out
+  }
+
   override fun toString() = "Deque(size=$size, capacity=$capacity)"
 
   override fun equals(other: Any?) = if (other is UIntDeque) buffer.contentEquals(buffer) else false
