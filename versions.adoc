@@ -1,74 +1,4 @@
-= K-Deque
-:source-highlighter: highlightjs
-:gh-group: k-libs
-:gh-name: k-deque
-:lib-package: io.klibs.collections
-:lib-group: io.k-libs
-:lib-name: deque
-:lib-version: 0.9.0
-:lib-feature: 0.9.0
-
-
-image:https://img.shields.io/github/license/{gh-group}/{gh-name}[title="License"]
-image:https://img.shields.io/badge/docs-dokka-ff69b4[link="https://{gh-group}.github.io/{gh-name}/dokka/{lib-feature}/{lib-name}/{lib-package}/index.html"]
-image:https://img.shields.io/maven-central/v/{lib-group}/{lib-name}[link="https://search.maven.org/artifact/{lib-group}/{lib-name}"]
-
-Pure Kotlin deque implementations.
-
-== Import
-
-[source, kotlin, subs="attributes"]
-----
-  implementation("{lib-group}:{lib-name}:{lib-version}")
-----
-
-== Usage
-
-.Kotlin
-[source, kotlin]
-----
-// Make a deque the hard way!
-val deque = Deque<Int>(
-  initialCapacity = 5,
-  scaleFactor = 2f,
-  maxSize = 32
-)
-
-// Make a deque the easy way!
-val deque = dequeOf(1, 2, 3, 4, 5)
-
-// Pop elements off the front!
-require(deque.popFirst() == 1)
-
-// Pop elements off the back!
-require(deque.popLast() == 5)
-
-// Peek at elements!
-require(deque.peekFirst() == 2)
-require(deque.peekLast() == 4)
-
-// Push elements onto the deque
-deque.pushFirst(-1)
-deque.pushLast(-5)
-
-// Iterate non-destructively!
-for (value in deque)
-  println(value)
-
-// Again!!
-deque.peekEach { println(it) }
-
-// In reverse!
-deque.peekEach(true) { println(it) }
-
-// Iterate destructively!
-deque.popEach { println(it) }
-----
-
-== Version History
-
-This table contains the last 10 versions, for a full list see
-link:versions.adoc[].
+= K-Deque Version History
 
 [%header, cols="1m,1m,10"]
 |===
@@ -113,4 +43,8 @@ link:versions.adoc[].
 | v0.2.0
 | https://{gh-group}.github.io/{gh-name}/dokka/0.2.0/{lib-name}/{lib-package}/index.html[Dokka]
 | Add UByteDeque
+
+| v0.1.0
+| https://{gh-group}.github.io/{gh-name}/dokka/0.1.0/{lib-name}/{lib-package}/index.html[Dokka]
+| Initial release containing a generic Deque type.
 |===
