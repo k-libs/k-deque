@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>UByteDeque</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+            <a href="../../../index.html">
+                    <span>deque</span>
+            </a>
+    </div>
+    <div>
+0.9.0    </div>
+    <div class="pull-right d-flex">
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" id="content" pageIds="deque::io.klibs.collections/UByteDeque///PointingToDeclaration//788909594">
+  <div class="breadcrumbs"><a href="../../../index.html">deque</a><span class="delimiter">/</span><a href="../index.html">io.klibs.collections</a><span class="delimiter">/</span><span class="current">UByteDeque</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>UByte</span><wbr></wbr><span><span>Deque</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="index.html">UByteDeque</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">initialCapacity<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">16</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>scaleFactor<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="token operator"> = </span><span class="token constant">1.5f</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>maxSize<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span></div><h1 class="">Unsigned Byte Deque</h1><p class="paragraph">Deque of UByte values.</p><span class="kdoc-tag"><h4 class="">Author</h4><p class="paragraph">Elizabeth Paige Harper - https://github.com/foxcapades</p></span><span class="kdoc-tag"><h4 class="">Since</h4><p class="paragraph">v0.2.0</p></span></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Types">Types</button><button class="section-tab" data-togglable="Constructors">Constructors</button><button class="section-tab" data-togglable="Functions">Functions</button><button class="section-tab" data-togglable="Properties">Properties</button><button class="section-tab" data-togglable="Parameters">Parameters</button></div>
+    <div class="tabs-section-body">
+      <h4 class="">Parameters</h4>
+      <div data-togglable="Parameters">
+        <div class="platform-hinted WithExtraAttributes" data-platform-hinted="data-platform-hinted" data-togglable="Parameters"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div data-togglable="Parameters"><div class="table" data-togglable="Parameters"><div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><u><span>initial</span><wbr></wbr><span><span>Capacity</span></span></u></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">Initial capacity of the internal data container backing the created deque.</p><p class="paragraph">Up to this many values may be added to the deque before the internal data container needs to be resized and reallocated.</p></div></div></div></div></div><div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><u><span>scale</span><wbr></wbr><span><span>Factor</span></span></u></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">Internal storage reallocation scale factor.</p><p class="paragraph">If/when this Deque determines it needs to resize its internal data container to hold additional values being pushed, the internal data container will be resized at a rate of <code class="lang-kotlin">capacity * scaleFactor</code>.</p><p class="paragraph">If the scale factor returns a value that is equal to or less than the current capacity, the resize will fall back to a size of <code class="lang-kotlin">capacity + 1</code>.</p><p class="paragraph"><strong>Default</strong>: <code class="lang-kotlin">1.5</code></p></div></div></div></div></div><div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><u><span>max</span><wbr></wbr><span><span>Size</span></span></u></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">Maximum size this deque can grow to.</p><p class="paragraph">If adding a value to this Deque would push the size or capacity of the deque to be greater than <a href="max-size.html">maxSize</a> then an exception will be thrown.</p><p class="paragraph"><strong>Default</strong>: <code class="lang-kotlin">2,147,483,647</code> (Int.MAX_VALUE)</p></div></div></div></div></div></div></div></div></div>
+      </div>
+      <h2 class="tabbedcontent">Constructors</h2>
+      <div class="table" data-togglable="Constructors"><a data-name="-892372400%2FConstructors%2F788909594" anchor-label="UByteDeque" id="-892372400%2FConstructors%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue TabbedContent">
+            <div class=""><span class="inline-flex">
+                <div><a href="-u-byte-deque.html"><span>UByte</span><wbr></wbr><span><span>Deque</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-892372400%2FConstructors%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="-u-byte-deque.html"><span class="token function">UByteDeque</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">initialCapacity<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">16</span><span class="token punctuation">, </span></span><span class="parameter ">scaleFactor<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="token operator"> = </span><span class="token constant">1.5f</span><span class="token punctuation">, </span></span><span class="parameter ">maxSize<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Constructs a new Deque instance.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="">Types</h2>
+      <div class="table" data-togglable="Types"><a data-name="419569327%2FClasslikes%2F788909594" anchor-label="Iterator" id="419569327%2FClasslikes%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="-iterator/index.html"><span><span>Iterator</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="419569327%2FClasslikes%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">inner </span><span class="token keyword">class </span><a href="-iterator/index.html">Iterator</a></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1159916523%2FClasslikes%2F788909594" anchor-label="ReverseIterator" id="-1159916523%2FClasslikes%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="-reverse-iterator/index.html"><span>Reverse</span><wbr></wbr><span><span>Iterator</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1159916523%2FClasslikes%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">inner </span><span class="token keyword">class </span><a href="-reverse-iterator/index.html">ReverseIterator</a></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="">Functions</h2>
+      <div class="table" data-togglable="Functions"><a data-name="463102142%2FFunctions%2F788909594" anchor-label="append" id="463102142%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="append.html"><span><span>append</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="463102142%2FFunctions%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><a href="append.html"><span class="token function">append</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-byte/index.html">UByte</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Pushes the given value onto the back of this deque.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-687593221%2FFunctions%2F788909594" anchor-label="atCapacity" id="-687593221%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="at-capacity.html"><span>at</span><wbr></wbr><span><span>Capacity</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-687593221%2FFunctions%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><a href="at-capacity.html"><span class="token function">atCapacity</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Tests whether this deque is currently at capacity, or in other words is the number of items in this deque equal to the size of the underlying data container.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="46940293%2FFunctions%2F788909594" anchor-label="clear" id="46940293%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="clear.html"><span><span>clear</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="46940293%2FFunctions%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="clear.html"><span class="token function">clear</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Clears all elements from this dequeue, leaving it empty, but with the same allocated capacity.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1363875303%2FFunctions%2F788909594" anchor-label="contains" id="-1363875303%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="contains.html"><span><span>contains</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1363875303%2FFunctions%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">operator </span><span class="token keyword">fun </span><a href="contains.html"><span class="token function">contains</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-byte/index.html">UByte</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Tests whether this deque contains at least one instance of the given value.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1639578417%2FFunctions%2F788909594" anchor-label="contentEquals" id="-1639578417%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="content-equals.html"><span>content</span><wbr></wbr><span><span>Equals</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1639578417%2FFunctions%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="content-equals.html"><span class="token function">contentEquals</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">other<span class="token operator">: </span><a href="index.html">UByteDeque</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="570816828%2FFunctions%2F788909594" anchor-label="copyOf" id="570816828%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="copy-of.html"><span>copy</span><wbr></wbr><span><span>Of</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="570816828%2FFunctions%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="copy-of.html"><span class="token function">copyOf</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">UByteDeque</a></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1042181929%2FFunctions%2F788909594" anchor-label="copyToArray" id="1042181929%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="copy-to-array.html"><span>copy</span><wbr></wbr><span>To</span><wbr></wbr><span><span>Array</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1042181929%2FFunctions%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="copy-to-array.html"><span class="token function">copyToArray</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-byte-array/index.html">UByteArray</a></div><div class="brief "><p class="paragraph">Returns the contents of this deque as an array.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-326504850%2FFunctions%2F788909594" anchor-label="ensureCapacity" id="-326504850%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="ensure-capacity.html"><span>ensure</span><wbr></wbr><span><span>Capacity</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-326504850%2FFunctions%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="ensure-capacity.html"><span class="token function">ensureCapacity</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">minCapacity<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Ensures that this deque has at least the given capacity allocated.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1488111783%2FFunctions%2F788909594" anchor-label="equals" id="-1488111783%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="equals.html"><span><span>equals</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1488111783%2FFunctions%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">operator override </span><span class="token keyword">fun </span><a href="equals.html"><span class="token function">equals</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">other<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="471278458%2FFunctions%2F788909594" anchor-label="get" id="471278458%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="get.html"><span><span>get</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="471278458%2FFunctions%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">operator </span><span class="token keyword">fun </span><a href="get.html"><span class="token function">get</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">index<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-byte/index.html">UByte</a></div><div class="brief "><p class="paragraph">Gets the value at the given index from this deque.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1415603859%2FFunctions%2F788909594" anchor-label="hashCode" id="-1415603859%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="hash-code.html"><span>hash</span><wbr></wbr><span><span>Code</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1415603859%2FFunctions%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="hash-code.html"><span class="token function">hashCode</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-145018206%2FFunctions%2F788909594" anchor-label="insert" id="-145018206%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="insert.html"><span><span>insert</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-145018206%2FFunctions%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="insert.html"><span class="token function">insert</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">index<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-byte/index.html">UByte</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Inserts the given value into this deque at the specified index.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="747781135%2FFunctions%2F788909594" anchor-label="isEmpty" id="747781135%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="is-empty.html"><span>is</span><wbr></wbr><span><span>Empty</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="747781135%2FFunctions%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><a href="is-empty.html"><span class="token function">isEmpty</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Returns true if this deque contains zero items.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="522809700%2FFunctions%2F788909594" anchor-label="isNotEmpty" id="522809700%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="is-not-empty.html"><span>is</span><wbr></wbr><span>Not</span><wbr></wbr><span><span>Empty</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="522809700%2FFunctions%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><a href="is-not-empty.html"><span class="token function">isNotEmpty</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Returns true if this deque contains one or more items.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1090957434%2FFunctions%2F788909594" anchor-label="iterator" id="1090957434%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="iterator.html"><span><span>iterator</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1090957434%2FFunctions%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">operator </span><span class="token keyword">fun </span><a href="iterator.html"><span class="token function">iterator</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-iterator/index.html">UByteDeque.Iterator</a></div><div class="brief "><p class="paragraph">Returns an iterator over the elements in this deque.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1078269099%2FFunctions%2F788909594" anchor-label="peekEach" id="-1078269099%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="peek-each.html"><span>peek</span><wbr></wbr><span><span>Each</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1078269099%2FFunctions%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="peek-each.html"><span class="token function">peekEach</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">reverse<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span><span class="token punctuation">, </span></span><span class="parameter ">fn<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span>value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-byte/index.html">UByte</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Calls the given function with each item in this deque.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1366831385%2FFunctions%2F788909594" anchor-label="peekEachIndexed" id="1366831385%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="peek-each-indexed.html"><span>peek</span><wbr></wbr><span>Each</span><wbr></wbr><span><span>Indexed</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1366831385%2FFunctions%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="peek-each-indexed.html"><span class="token function">peekEachIndexed</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">reverse<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token punctuation">, </span></span><span class="parameter ">fn<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span>index<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span><span class="token keyword"></span>value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-byte/index.html">UByte</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Calls the given function with each item in this deque and its index.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="738194237%2FFunctions%2F788909594" anchor-label="peekFirst" id="738194237%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="peek-first.html"><span>peek</span><wbr></wbr><span><span>First</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="738194237%2FFunctions%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="peek-first.html"><span class="token function">peekFirst</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-byte/index.html">UByte</a></div><div class="brief "><p class="paragraph">Returns the first item in this deque.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1056722762%2FFunctions%2F788909594" anchor-label="peekFirstOr" id="1056722762%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="peek-first-or.html"><span>peek</span><wbr></wbr><span>First</span><wbr></wbr><span><span>Or</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1056722762%2FFunctions%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="peek-first-or.html"><span class="token function">peekFirstOr</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-byte/index.html">UByte</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-byte/index.html">UByte</a></div><div class="brief "><p class="paragraph">Returns the first item in this deque if it is not empty, otherwise returns the given <a href="peek-first-or.html">value</a>.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1025085043%2FFunctions%2F788909594" anchor-label="peekFirstOrGet" id="-1025085043%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="peek-first-or-get.html"><span>peek</span><wbr></wbr><span>First</span><wbr></wbr><span>Or</span><wbr></wbr><span><span>Get</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1025085043%2FFunctions%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="peek-first-or-get.html"><span class="token function">peekFirstOrGet</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">fn<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-byte/index.html">UByte</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-byte/index.html">UByte</a></div><div class="brief "><p class="paragraph">Returns the first item in this deque if it is not empty, otherwise returns the value returned by the given function.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-907891629%2FFunctions%2F788909594" anchor-label="peekFirstOrNull" id="-907891629%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="peek-first-or-null.html"><span>peek</span><wbr></wbr><span>First</span><wbr></wbr><span>Or</span><wbr></wbr><span><span>Null</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-907891629%2FFunctions%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="peek-first-or-null.html"><span class="token function">peekFirstOrNull</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-byte/index.html">UByte</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Returns the first item in this deque if it is not empty, otherwise returns <code class="lang-kotlin">null</code>.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-919743904%2FFunctions%2F788909594" anchor-label="peekFirstOrThrow" id="-919743904%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="peek-first-or-throw.html"><span>peek</span><wbr></wbr><span>First</span><wbr></wbr><span>Or</span><wbr></wbr><span><span>Throw</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-919743904%2FFunctions%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="peek-first-or-throw.html"><span class="token function">peekFirstOrThrow</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">fn<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html">Throwable</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-byte/index.html">UByte</a></div><div class="brief "><p class="paragraph">Returns the first item in this deque if it is not empty, otherwise returns the value returned by the given function.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1480983479%2FFunctions%2F788909594" anchor-label="peekLast" id="1480983479%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="peek-last.html"><span>peek</span><wbr></wbr><span><span>Last</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1480983479%2FFunctions%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="peek-last.html"><span class="token function">peekLast</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-byte/index.html">UByte</a></div><div class="brief "><p class="paragraph">Returns the last item in this deque.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="32965188%2FFunctions%2F788909594" anchor-label="peekLastOr" id="32965188%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="peek-last-or.html"><span>peek</span><wbr></wbr><span>Last</span><wbr></wbr><span><span>Or</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="32965188%2FFunctions%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="peek-last-or.html"><span class="token function">peekLastOr</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-byte/index.html">UByte</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-byte/index.html">UByte</a></div><div class="brief "><p class="paragraph">Returns the last item in this deque if it is not empty, otherwise returns the given <a href="peek-last-or.html">value</a>.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-628670765%2FFunctions%2F788909594" anchor-label="peekLastOrGet" id="-628670765%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="peek-last-or-get.html"><span>peek</span><wbr></wbr><span>Last</span><wbr></wbr><span>Or</span><wbr></wbr><span><span>Get</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-628670765%2FFunctions%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="peek-last-or-get.html"><span class="token function">peekLastOrGet</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">fn<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-byte/index.html">UByte</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-byte/index.html">UByte</a></div><div class="brief "><p class="paragraph">Returns the last item in this deque if it is not empty, otherwise returns the value returned by the given function.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1022035635%2FFunctions%2F788909594" anchor-label="peekLastOrNull" id="-1022035635%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="peek-last-or-null.html"><span>peek</span><wbr></wbr><span>Last</span><wbr></wbr><span>Or</span><wbr></wbr><span><span>Null</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1022035635%2FFunctions%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="peek-last-or-null.html"><span class="token function">peekLastOrNull</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-byte/index.html">UByte</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Returns the last item in this deque if it is not empty, otherwise returns <code class="lang-kotlin">null</code>.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="2100630310%2FFunctions%2F788909594" anchor-label="peekLastOrThrow" id="2100630310%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="peek-last-or-throw.html"><span>peek</span><wbr></wbr><span>Last</span><wbr></wbr><span>Or</span><wbr></wbr><span><span>Throw</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2100630310%2FFunctions%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="peek-last-or-throw.html"><span class="token function">peekLastOrThrow</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">fn<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html">Throwable</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-byte/index.html">UByte</a></div><div class="brief "><p class="paragraph">Returns the last item in this deque if it is not empty, otherwise returns the value returned by the given function.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="360493199%2FFunctions%2F788909594" anchor-label="plusAssign" id="360493199%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="plus-assign.html"><span>plus</span><wbr></wbr><span><span>Assign</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="360493199%2FFunctions%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">inline operator </span><span class="token keyword">fun </span><a href="plus-assign.html"><span class="token function">plusAssign</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-byte/index.html">UByte</a></span></span><span class="token punctuation">)</span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1542720404%2FFunctions%2F788909594" anchor-label="popAt" id="-1542720404%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="pop-at.html"><span>pop</span><wbr></wbr><span><span>At</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1542720404%2FFunctions%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="pop-at.html"><span class="token function">popAt</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">index<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-byte/index.html">UByte</a></div><div class="brief "><p class="paragraph">Removes and returns the element at the given index from this deque.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1343687871%2FFunctions%2F788909594" anchor-label="popEach" id="-1343687871%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="pop-each.html"><span>pop</span><wbr></wbr><span><span>Each</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1343687871%2FFunctions%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="pop-each.html"><span class="token function">popEach</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">reverse<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span><span class="token punctuation">, </span></span><span class="parameter ">fn<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span>value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-byte/index.html">UByte</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Removes each item off of this deque one at a time and calls the given function with each removed item.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="333747717%2FFunctions%2F788909594" anchor-label="popEachIndexed" id="333747717%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="pop-each-indexed.html"><span>pop</span><wbr></wbr><span>Each</span><wbr></wbr><span><span>Indexed</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="333747717%2FFunctions%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="pop-each-indexed.html"><span class="token function">popEachIndexed</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">reverse<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span><span class="token punctuation">, </span></span><span class="parameter ">fn<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span>index<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span><span class="token keyword"></span>value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-byte/index.html">UByte</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Removes each item off of this deque one at a time and calls the given function with each removed item along with the index of that item in the deque.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="589475625%2FFunctions%2F788909594" anchor-label="popFirst" id="589475625%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="pop-first.html"><span>pop</span><wbr></wbr><span><span>First</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="589475625%2FFunctions%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="pop-first.html"><span class="token function">popFirst</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-byte/index.html">UByte</a></div><div class="brief "><p class="paragraph">Removes the first item from this deque and returns it.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="797031990%2FFunctions%2F788909594" anchor-label="popFirstOr" id="797031990%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="pop-first-or.html"><span>pop</span><wbr></wbr><span>First</span><wbr></wbr><span><span>Or</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="797031990%2FFunctions%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="pop-first-or.html"><span class="token function">popFirstOr</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-byte/index.html">UByte</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-byte/index.html">UByte</a></div><div class="brief "><p class="paragraph">Removes and returns the first item in this deque or returns <a href="pop-first-or.html">value</a> if this deque is empty.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1090113057%2FFunctions%2F788909594" anchor-label="popFirstOrGet" id="1090113057%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="pop-first-or-get.html"><span>pop</span><wbr></wbr><span>First</span><wbr></wbr><span>Or</span><wbr></wbr><span><span>Get</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1090113057%2FFunctions%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="pop-first-or-get.html"><span class="token function">popFirstOrGet</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">fn<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-byte/index.html">UByte</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-byte/index.html">UByte</a></div><div class="brief "><p class="paragraph">Removes and returns the first item in this deque or returns the value returned by <a href="pop-first-or-get.html">fn</a> if this deque is empty.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1359726399%2FFunctions%2F788909594" anchor-label="popFirstOrNull" id="1359726399%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="pop-first-or-null.html"><span>pop</span><wbr></wbr><span>First</span><wbr></wbr><span>Or</span><wbr></wbr><span><span>Null</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1359726399%2FFunctions%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="pop-first-or-null.html"><span class="token function">popFirstOrNull</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-byte/index.html">UByte</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Removes and returns the first item in this deque or returns <code class="lang-kotlin">null</code> if this deque is empty.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="2137419764%2FFunctions%2F788909594" anchor-label="popFirstOrThrow" id="2137419764%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="pop-first-or-throw.html"><span>pop</span><wbr></wbr><span>First</span><wbr></wbr><span>Or</span><wbr></wbr><span><span>Throw</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2137419764%2FFunctions%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="pop-first-or-throw.html"><span class="token function">popFirstOrThrow</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">fn<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html">Throwable</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-byte/index.html">UByte</a></div><div class="brief "><p class="paragraph">Removes the first item from this deque and returns it.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-47834549%2FFunctions%2F788909594" anchor-label="popLast" id="-47834549%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="pop-last.html"><span>pop</span><wbr></wbr><span><span>Last</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-47834549%2FFunctions%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="pop-last.html"><span class="token function">popLast</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-byte/index.html">UByte</a></div><div class="brief "><p class="paragraph">Removes the last item from this deque and returns it.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1825703384%2FFunctions%2F788909594" anchor-label="popLastOr" id="1825703384%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="pop-last-or.html"><span>pop</span><wbr></wbr><span>Last</span><wbr></wbr><span><span>Or</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1825703384%2FFunctions%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="pop-last-or.html"><span class="token function">popLastOr</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-byte/index.html">UByte</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-byte/index.html">UByte</a></div><div class="brief "><p class="paragraph">Removes and returns the last item in this deque or returns <a href="pop-last-or.html">value</a> if this deque is empty.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1391722561%2FFunctions%2F788909594" anchor-label="popLastOrGet" id="-1391722561%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="pop-last-or-get.html"><span>pop</span><wbr></wbr><span>Last</span><wbr></wbr><span>Or</span><wbr></wbr><span><span>Get</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1391722561%2FFunctions%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="pop-last-or-get.html"><span class="token function">popLastOrGet</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">fn<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-byte/index.html">UByte</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-byte/index.html">UByte</a></div><div class="brief "><p class="paragraph">Removes and returns the last item in this deque or returns the value returned by <a href="pop-last-or-get.html">fn</a> if this deque is empty.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1641623327%2FFunctions%2F788909594" anchor-label="popLastOrNull" id="-1641623327%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="pop-last-or-null.html"><span>pop</span><wbr></wbr><span>Last</span><wbr></wbr><span>Or</span><wbr></wbr><span><span>Null</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1641623327%2FFunctions%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="pop-last-or-null.html"><span class="token function">popLastOrNull</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-byte/index.html">UByte</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Removes and returns the last item in this deque or returns <code class="lang-kotlin">null</code> if this deque is empty.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-848792814%2FFunctions%2F788909594" anchor-label="popLastOrThrow" id="-848792814%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="pop-last-or-throw.html"><span>pop</span><wbr></wbr><span>Last</span><wbr></wbr><span>Or</span><wbr></wbr><span><span>Throw</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-848792814%2FFunctions%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="pop-last-or-throw.html"><span class="token function">popLastOrThrow</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">fn<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html">Throwable</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-byte/index.html">UByte</a></div><div class="brief "><p class="paragraph">Removes the last item from this deque and returns it.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1602987308%2FFunctions%2F788909594" anchor-label="prepend" id="-1602987308%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="prepend.html"><span><span>prepend</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1602987308%2FFunctions%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><a href="prepend.html"><span class="token function">prepend</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-byte/index.html">UByte</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Pushes the given value onto the front of this deque.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="2065810028%2FFunctions%2F788909594" anchor-label="pushFirst" id="2065810028%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="push-first.html"><span>push</span><wbr></wbr><span><span>First</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2065810028%2FFunctions%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="push-first.html"><span class="token function">pushFirst</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-byte/index.html">UByte</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Pushes the given value onto the front of this deque.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1211519496%2FFunctions%2F788909594" anchor-label="pushLast" id="1211519496%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="push-last.html"><span>push</span><wbr></wbr><span><span>Last</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1211519496%2FFunctions%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="push-last.html"><span class="token function">pushLast</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-byte/index.html">UByte</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Pushes the given value onto the back of this deque.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1529391234%2FFunctions%2F788909594" anchor-label="reverseIterator" id="1529391234%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="reverse-iterator.html"><span>reverse</span><wbr></wbr><span><span>Iterator</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1529391234%2FFunctions%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="reverse-iterator.html"><span class="token function">reverseIterator</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-reverse-iterator/index.html">UByteDeque.ReverseIterator</a></div><div class="brief "><p class="paragraph">Returns an iterator over the elements in this deque in reverse, starting from the last element and ending with the first.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1643514753%2FFunctions%2F788909594" anchor-label="set" id="1643514753%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="set.html"><span><span>set</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1643514753%2FFunctions%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">operator </span><span class="token keyword">fun </span><a href="set.html"><span class="token function">set</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">index<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-byte/index.html">UByte</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Sets the value at the given index from this deque.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1593769924%2FFunctions%2F788909594" anchor-label="toString" id="-1593769924%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="to-string.html"><span>to</span><wbr></wbr><span><span>String</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1593769924%2FFunctions%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="to-string.html"><span class="token function">toString</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1829559370%2FFunctions%2F788909594" anchor-label="trimToSize" id="1829559370%2FFunctions%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="trim-to-size.html"><span>trim</span><wbr></wbr><span>To</span><wbr></wbr><span><span>Size</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1829559370%2FFunctions%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="trim-to-size.html"><span class="token function">trimToSize</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="">Properties</h2>
+      <div class="table" data-togglable="Properties"><a data-name="840421806%2FProperties%2F788909594" anchor-label="capacity" id="840421806%2FProperties%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="capacity.html"><span><span>capacity</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="840421806%2FProperties%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><a data-name="840421806%2FProperties%2F788909594" anchor-label="capacity" id="840421806%2FProperties%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="capacity.html">capacity</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></div><div class="brief "><a data-name="840421806%2FProperties%2F788909594" anchor-label="capacity" id="840421806%2FProperties%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a><p class="paragraph">Currently allocated capacity.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="713536248%2FProperties%2F788909594" anchor-label="freeSpace" id="713536248%2FProperties%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="free-space.html"><span>free</span><wbr></wbr><span><span>Space</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="713536248%2FProperties%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><a data-name="713536248%2FProperties%2F788909594" anchor-label="freeSpace" id="713536248%2FProperties%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="free-space.html">freeSpace</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></div><div class="brief "><a data-name="713536248%2FProperties%2F788909594" anchor-label="freeSpace" id="713536248%2FProperties%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a><p class="paragraph">The amount of space left in this queue's currently allocated backing data container.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-116265130%2FProperties%2F788909594" anchor-label="lastIndex" id="-116265130%2FProperties%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="last-index.html"><span>last</span><wbr></wbr><span><span>Index</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-116265130%2FProperties%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><a data-name="-116265130%2FProperties%2F788909594" anchor-label="lastIndex" id="-116265130%2FProperties%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="last-index.html">lastIndex</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></div><div class="brief "><a data-name="-116265130%2FProperties%2F788909594" anchor-label="lastIndex" id="-116265130%2FProperties%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a><p class="paragraph">Index of the last element in this deque.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1651692813%2FProperties%2F788909594" anchor-label="maxSize" id="1651692813%2FProperties%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="max-size.html"><span>max</span><wbr></wbr><span><span>Size</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1651692813%2FProperties%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><a data-name="1651692813%2FProperties%2F788909594" anchor-label="maxSize" id="1651692813%2FProperties%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="max-size.html">maxSize</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="168484185%2FProperties%2F788909594" anchor-label="scaleFactor" id="168484185%2FProperties%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="scale-factor.html"><span>scale</span><wbr></wbr><span><span>Factor</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="168484185%2FProperties%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><a data-name="168484185%2FProperties%2F788909594" anchor-label="scaleFactor" id="168484185%2FProperties%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="scale-factor.html">scaleFactor</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="token operator"> = </span><span class="token constant">1.5f</span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-989011513%2FProperties%2F788909594" anchor-label="size" id="-989011513%2FProperties%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a>
+        <div class="table-row" data-filterable-current=":dokkaHtml/commonMain" data-filterable-set=":dokkaHtml/commonMain">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="size.html"><span><span>size</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-989011513%2FProperties%2F788909594"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><a data-name="-989011513%2FProperties%2F788909594" anchor-label="size" id="-989011513%2FProperties%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="size.html">size</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">0</span></div><div class="brief "><a data-name="-989011513%2FProperties%2F788909594" anchor-label="size" id="-989011513%2FProperties%2F788909594" data-filterable-set=":dokkaHtml/commonMain"></a><p class="paragraph">Number of elements in this deque.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+</body>
+</html>

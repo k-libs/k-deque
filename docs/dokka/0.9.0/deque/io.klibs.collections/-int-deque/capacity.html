@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>capacity</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+            <a href="../../../index.html">
+                    <span>deque</span>
+            </a>
+    </div>
+    <div>
+0.9.0    </div>
+    <div class="pull-right d-flex">
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" id="content" pageIds="deque::io.klibs.collections/IntDeque/capacity/#/PointingToDeclaration//788909594">
+  <div class="breadcrumbs"><a href="../../../index.html">deque</a><span class="delimiter">/</span><a href="../index.html">io.klibs.collections</a><span class="delimiter">/</span><a href="index.html">IntDeque</a><span class="delimiter">/</span><span class="current">capacity</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>capacity</span></span></h1>
+  </div>
+  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="capacity.html">capacity</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></div><p class="paragraph">Currently allocated capacity.</p><p class="paragraph">Values may be added to this deque until <a href="size.html">size</a> == <a href="capacity.html">capacity</a> before the deque will reallocate a larger backing buffer.</p><p class="paragraph"><strong>Example</strong></p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">// Create a deque with an initial capacity value of `9`<br>val deque = Deque(9)        // deque == {0, 0, 0, 0, 0, 0, 0, 0, 0}<br><br>// Even though we have not yet inserted any elements, the capacity is 9<br>assert(deque.capacity == 9)<br><br>// Add some elements to the deque<br>deque += [1, 2, 3, 4, 5, 6] // deque == {1, 2, 3, 4, 5, 6, 0, 0, 0}<br><br>// Deque capacity will still be 9 as we have not yet inserted enough<br>// elements to require a capacity increase<br>assert(deque.capacity == 9)<br><br>// Increase the capacity to 12<br>deque.ensureCapacity(12)    // deque == {1, 2, 3, 4, 5, 6, 0, 0, 0, 0, 0, 0}</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">The backing buffer is always increased to at minimum hold the number of values being inserted, but the rate of increase may scale the size of the capacity faster than that.</p><p class="paragraph">This is to avoid many repeated re-allocations of the backing container. To put it simply, it would be very expensive to use a deque (or <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-array-list/index.html">ArrayList</a> for that matter) if every new element required a resize.</p></div></div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+</body>
+</html>
