@@ -1,4 +1,8 @@
 = K-Deque Version History
+:gh-group: k-libs
+:gh-name: k-deque
+:lib-package: io.klibs.collections
+:lib-name: deque
 
 [%header, cols="1m,1m,10"]
 |===
