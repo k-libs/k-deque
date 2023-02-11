@@ -9,7 +9,7 @@ import kotlin.js.JsExport
  * Deque of Char values.
  *
  * @author Elizabeth Paige Harper - https://github.com/foxcapades
- * @since v0.7.0
+ * @since v0.9.0
  *
  * @constructor Constructs a new Deque instance.
  *
